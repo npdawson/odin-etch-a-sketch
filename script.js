@@ -5,9 +5,15 @@ function createGrid(size) {
             const square = document.createElement('div');
             square.classList.add('square');
             square.style.gridArea = i / j;
+            square.addEventListener('mouseover', hoverOnSquare);
             container.appendChild(square);
         }
     }
+}
+
+function hoverOnSquare(e) {
+    console.log(this);
+    this.style.backgroundColor = "black";
 }
 
 createGrid(16);
