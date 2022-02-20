@@ -13,8 +13,10 @@ function createGrid(size) {
 }
 
 function hoverOnSquare(e) {
-    console.log(this);
-    this.style.backgroundColor = "black";
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    this.style.backgroundColor = `rgb(${red},${green},${blue})`;
 }
 
 function clearGrid(e) {
