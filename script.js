@@ -5,9 +5,11 @@ const container = document.querySelector('#container');
 function createGrid(size) {
     for (let i = 1; i <= size; i++) {
         for (let j = 1; j <= size; j++) {
+            // for position (i,j) in the grid, create a new square div
             const square = document.createElement('div');
             square.classList.add('square');
-            square.style.gridArea = i / j; // set the coordinates of the square in the grid
+            // set the coordinates of the square in the grid
+            square.style.gridArea = i / j; 
             square.addEventListener('mouseover', hoverOnSquare);
             container.appendChild(square);
         }
@@ -24,6 +26,7 @@ function hoverOnSquare(e) {
 
 // callback function for the Clear button
 function clearGrid(e) {
+    // need to empty the container before we generate a new grid
     container.innerHTML = "";
     let answer = parseInt(window.prompt("Please enter the size of the new grid. (Max 100)", "16"));
     answer = Math.min(answer, 100)
